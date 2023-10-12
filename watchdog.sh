@@ -34,7 +34,7 @@ for region in $AWS_REGIONS ; do
         fi
 
         echo "Shutting down ${USER}'s instance in $region ($instance - $NAME)\n" 
-        aws --region $region ec2 stop-instances --instance-ids $instance 
+        stop=$(aws --region $region ec2 stop-instances --instance-ids $instance)
     done 
 done
 
